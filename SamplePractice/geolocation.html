@@ -1,0 +1,26 @@
+<html>
+    <head></head>
+    <body><h2>Display Users current location</h2>
+    <input type="text" onmouseover="getLocation()" name="Get Current Location" value="Show Location" style="background-color:cornflowerblue"><br><br>
+    <p id="location"></p>
+    
+    <script>
+        function getLocation(){
+
+        function recieved(location){
+              let lat=location.coords.latitude;
+              let longt=location.coords.longitude;
+              let alt=location.coords.altitude;
+
+              document.getElementById("location").innerHTML="Latitude is"+" "+lat+" "+"Longitude is"+" "+longt+" "+"altitude is"+" "+alt;
+
+        }
+        function reject(location){
+            document.getElementById("location").innerHTML="Location not found";
+        }
+        navigator.geolocation.getCurrentPosition(recieved,reject);
+    }
+    </script>
+    
+    </body>
+</html>

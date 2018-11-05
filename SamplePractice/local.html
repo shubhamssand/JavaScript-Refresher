@@ -1,0 +1,29 @@
+<html>
+    <head><title>Display authors</title></head>
+    <body>
+        <script> 
+
+            var arr=["J.K Rowling","Mark Twain","Dr.Seuss","Jane Austen","XYZ"];
+            var aut=[];
+            function showAuthors(){
+                //display from local storage
+                document.getElementById("authors").innerHTML=localStorage.authors;
+                
+            }
+            function addAuthors(){
+
+                aut.push(arr.pop());
+                
+                //add to local storage
+                localStorage.authors=aut.toString();
+            }
+            
+        </script>
+        <div>
+        <button onclick="showAuthors()">Click to Display authors</button>
+        <button onclick="addAuthors()">Add Authors</button>
+        <h3>List of authors is:</h3>
+        <p id="authors"></p>
+    </div>
+    </body>
+</html>
